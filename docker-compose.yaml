@@ -7,5 +7,15 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: mailer-lib
-    ports:
-      - "3002:3002"
+    environment:
+      - VIRTUAL_HOST=mailer.hexagn.in
+      - VIRTUAL_PORT=3002
+      - LETSENCRYPT_HOST=mailer.hexagn.in
+      - LETSENCRYPT_EMAIL=jigar@hexagn.in
+    networks:
+      - proxy-net
+      
+networks:
+  proxy-net:
+    name: nginx-proxy
+    external: true
