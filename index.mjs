@@ -1,15 +1,9 @@
 import Fastify from "fastify";
 import { z } from "zod";
-import cors from "@fastify/cors";
 import nodemailer from "nodemailer";
 
 const fastify = Fastify({
   logger: true,
-});
-
-await fastify.register(cors, {
-  origin: "*", // or your domain: "https://yourdomain.com"
-  methods: ["GET", "POST"],
 });
 
 fastify.get("/", async function handler(request, reply) {
