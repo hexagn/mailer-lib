@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/cors": "^11.1.0",
     "fastify": "^4.28.1",
     "nodemailer": "^6.9.15",
     "zod": "^3.23.8"
